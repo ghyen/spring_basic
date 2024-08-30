@@ -7,9 +7,8 @@ import hello.hello_spring.domain.Member;
 import hello.hello_spring.repository.MemberRepository;
 
 public class MemberService {
-
 	private final MemberRepository memberRepository;
-
+	
 	public MemberService(MemberRepository memberRepository) {
 		this.memberRepository = memberRepository;
 	}
