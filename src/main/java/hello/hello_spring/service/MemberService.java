@@ -5,10 +5,12 @@ import java.util.Optional;
 
 import hello.hello_spring.domain.Member;
 import hello.hello_spring.repository.MemberRepository;
+import jakarta.transaction.Transactional;
 
+@Transactional
 public class MemberService {
 	private final MemberRepository memberRepository;
-	
+
 	public MemberService(MemberRepository memberRepository) {
 		this.memberRepository = memberRepository;
 	}
