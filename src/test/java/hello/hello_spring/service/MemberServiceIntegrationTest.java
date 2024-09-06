@@ -14,19 +14,20 @@ import jakarta.transaction.Transactional;
 
 @SpringBootTest
 @Transactional
+@Commit
 public class MemberServiceIntegrationTest {
 
+	String _name = "gkwon1";
 	@Autowired
 	MemberService memberService;
 	@Autowired
 	MemberRepository memberRepository;
 
 	@Test
-	@Commit
 	public void join() {
 		//gvien
 		Member member = new Member();
-		member.setName("gkwon");
+		member.setName(_name);
 
 		//when
 		Long savedId = memberService.join(member);
@@ -38,12 +39,13 @@ public class MemberServiceIntegrationTest {
 
 	@Test
 	public void duplicateJoin() {
-		join();
-		Member member = new Member();
-		member.setName("gkwon");
+		Member member1 = new Member();
+		member1.setName(_name);
+		Member member2 = new Member();
+		member2.setName(_name);
 
 		IllegalStateException e = assertThrows(IllegalStateException.class,
-			() -> memberService.join(member));
+			() -> memberService.join(member2));
 
 		assertThat(e.getMessage()).isEqualTo("이미 존재하는 회원입니다.");
 
