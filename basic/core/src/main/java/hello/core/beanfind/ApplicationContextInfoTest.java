@@ -5,11 +5,12 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.config.BeanDefinition;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
-import hello.core.AppConfig;
+//import hello.core.AppConfig;
+import hello.core.AutoAppConfig;
 
 public class ApplicationContextInfoTest {
 
-	AnnotationConfigApplicationContext ac = new AnnotationConfigApplicationContext(AppConfig.class);
+	AnnotationConfigApplicationContext ac = new AnnotationConfigApplicationContext(AutoAppConfig.class);
 
 	@Test
 	@DisplayName("모든 빈 출력하기")

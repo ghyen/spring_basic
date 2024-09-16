@@ -7,13 +7,14 @@ import org.springframework.beans.factory.NoSuchBeanDefinitionException;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 
-import hello.core.AppConfig;
+//import hello.core.AppConfig;
+import hello.core.AutoAppConfig;
 import hello.core.MemberApp;
 import hello.core.member.MemberService;
 
 public class ApplicationContextBasicFindTest {
 
-	AnnotationConfigApplicationContext ac = new AnnotationConfigApplicationContext(AppConfig.class);
+	AnnotationConfigApplicationContext ac = new AnnotationConfigApplicationContext(AutoAppConfig.class);
 
 	@Test
 	@DisplayName("빈 이름으로 조회")
